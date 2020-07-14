@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { AppStateType } from "../../../store/index";
 
 interface Props {
   type?: "textarea";
@@ -9,13 +11,14 @@ interface Props {
   inline?: boolean;
 }
 
-const EditableInput: React.FC<Props> = ({
+const EditableInput: React.FC<Props & IMapStateToProps> = ({
   entity,
   field,
   onUpdate,
   className,
   inline,
   type,
+  userId,
 }) => {
   const [isActiveInput, setIsActiveInput] = useState<boolean>(false);
   const [originalValue, setOriginalValue] = useState<string>(entity[field]);
@@ -55,15 +58,17 @@ const EditableInput: React.FC<Props> = ({
             )}
           </div>
         )}
-        <button
-          className="btn btn-warning ml-5"
-          onClick={() => {
-            if (isActiveInput) setFieldValue(originalValue);
-            setIsActiveInput(!isActiveInput);
-          }}
-        >
-          {isActiveInput ? "Cancel" : "Edit"}
-        </button>
+        {userId && (
+          <button
+            className="btn btn-warning ml-5"
+            onClick={() => {
+              if (isActiveInput) setFieldValue(originalValue);
+              setIsActiveInput(!isActiveInput);
+            }}
+          >
+            {isActiveInput ? "Cancel" : "Edit"}
+          </button>
+        )}
         {isActiveInput && (
           <button
             className="btn btn-primary ml-2"
@@ -90,4 +95,12 @@ const EditableInput: React.FC<Props> = ({
   );
 };
 
-export default EditableInput;
+interface IMapStateToProps {
+  userId: string | null;
+}
+
+const mapStateToProps = (state: AppStateType): IMapStateToProps => ({
+  userId: state.auth.userId,
+});
+
+export default connect(mapStateToProps)(EditableInput);
