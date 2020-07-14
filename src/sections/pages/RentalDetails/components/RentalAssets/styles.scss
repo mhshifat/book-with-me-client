@@ -1,0 +1,20 @@
+.rental-assets .row .col-md-6 span svg {
+  margin-right: 0.5rem;
+}
+
+.rental-owner {
+  float: right;
+
+  img {
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  span {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap");
+
+.logo {
+  font-family: "Oleo Script", cursive;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-right: 2rem;
+}
+
+.navbar {
+  background: #343a40;
+  color: #fff;
+  padding: 0.5rem 2rem;
+}
+
+.navbar a {
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+}
+
+.navbar a:hover {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.form-inline input {
+  width: 35rem !important;
+}
+
+.form-inline input,
+.form-inline input::placeholder {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.4rem;
+  color: #101010;
+  font-weight: 500;
+}

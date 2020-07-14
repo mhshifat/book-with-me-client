@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  background: #fff;
+  line-height: 1.61;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:hover,
+button:focus,
+button:active,
+input,
+input:hover,
+input:focus,
+input:active {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.bwm-form {
+  margin-top: 8rem;
+
+  & .form-group label {
+    font-size: 1.4rem;
+  }
+
+  & .form-control {
+    height: 4rem;
+    font-size: 1.4rem;
+  }
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    p {
+      margin: 0;
+    }
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  .form-text {
+    font-size: 13px;
+  }
+
+  .catchphrase {
+    text-align: center;
+    font-size: 42px;
+    position: absolute;
+    color: #f1f1f1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    letter-spacing: 1px;
+  }
+}
+
+.btn-bwm-main {
+  border: 1px solid #343a40;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  background: #343a40;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid #343a40;
+    background: #fff;
+    color: #343a40;
+  }
+}
