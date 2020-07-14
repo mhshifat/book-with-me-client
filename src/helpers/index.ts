@@ -13,8 +13,8 @@ export const sendRequest = async (
     };
     const res =
       method === "get"
-        ? await axios["get"](url, config)
-        : await axios["post"](url, data, config);
+        ? await axios["get"](`/api/v1${url}`, config)
+        : await axios["post"](`/api/v1${url}`, data, config);
     return res.data;
   } catch (err) {
     return Promise.reject(extractApiErrors(err.response || {}));
