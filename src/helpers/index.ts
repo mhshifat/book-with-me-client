@@ -13,8 +13,15 @@ export const sendRequest = async (
     };
     const res =
       method === "get"
-        ? await axios["get"](`/api/v1${url}`, config)
-        : await axios["post"](`/api/v1${url}`, data, config);
+        ? await axios["get"](
+            `https://book-with-me-api.herokuapp.com/api/v1${url}`,
+            config
+          )
+        : await axios["post"](
+            `https://book-with-me-api.herokuapp.com/api/v1${url}`,
+            data,
+            config
+          );
     return res.data;
   } catch (err) {
     return Promise.reject(extractApiErrors(err.response || {}));
